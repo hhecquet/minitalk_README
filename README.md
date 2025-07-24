@@ -16,18 +16,19 @@ What I had to do:
 * Convert each character into its binary representation and send each bit using signals
 * Reconstruct the characters on the server side by catching and assembling incoming bits
 * Handle acknowledgments or delays to ensure reliable transmission
-* To achieve this, I had to:
-  * Master signal handling using `signal()` and `sigaction()`
-  * Use bitwise operations to encode and decode characters
-  * Implement safe and synchronous communication between processes
-  * Handle edge cases like **null terminators**, **special characters**, or **invalid PIDs**
+  
+To achieve this, I had to:
+* Master signal handling using `signal()` and `sigaction()`
+* Use bitwise operations to encode and decode characters
+* Implement safe and synchronous communication between processes
+* Handle edge cases like **null terminators**, **special characters**, or **invalid PIDs**
 
 Bonus Part: Advanced Features
 * For the bonus part, I expanded Minitalk to:
-* Acknowledge receipt of each character or full message using return signals
-* Handle Unicode characters (multi-byte encoding)
-* Add more robust error handling and checks (e.g., invalid PID, message loss)
-* Support longer messages through signal flow control or queuing
+  * Acknowledge receipt of each character or full message using return signals
+  * Handle Unicode characters (multi-byte encoding)
+  * Add more robust error handling and checks (e.g., invalid PID, message loss)
+  * Support longer messages through signal flow control or queuing
 
 What I Learned:
 * The fundamentals of signals and inter-process communication (**IPC**) in Unix
